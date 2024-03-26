@@ -1,10 +1,10 @@
 extends layout
 
 block content
-  h1 Search Results: Herbs
+  h1 title 
 
   // Step 1: Unbuffered server-side code to define results array
-  - let results = [
+  - let herbs = [
     { herb_name: 'Lavender', scent: 'Sweet', medicinal_uses: 'Relaxation' },
     { herb_name: 'Peppermint', scent: 'Minty', medicinal_uses: 'Digestion' },
     { herb_name: 'Chamomile', scent: 'Floral', medicinal_uses: 'Sleep aid' }
@@ -12,19 +12,16 @@ block content
 
   // Step 3: Outermost div with class container-fluid
   div(class="container-fluid")
-  
+
 
     // Step 4: Middle div with class row
     div(class="row")
 
       // Step 5: Iterate over results array
-      - each item in results
+      - each item in herbs
 
         // Step 6: Inner div for each object
-        div(class="col-sm-4")
-          h3= item.herb_name
-          p Scent: #{item.scent}
-          p Medicinal Uses: #{item.medicinal_uses}
+        div(class="col-sm-2") #{h.herb_name}#{h.scent}#{h.medicinal_uses}
 
   // Step 8: Hyperlink to the endpoint created in step 5
   p
