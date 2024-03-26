@@ -9,15 +9,15 @@ block content
   link(rel='stylesheet', href='/stylesheets/style.css')
   p This is Saikumar Manga,wants to act in movies.
   button(type="button", class="btn btn-success") I am a button
-  
+  div#double Up the amount.
     script.
       var value = 0;
       var power = 1;
       function double() {
         value += 1;
         power *= 2;
-        document.getElementById('double').innerText = "Two to the power " + value + " is " + power;
+        document.getElementById('double').innerHTML = `Two to the power ${value} is ${power}.`;
       }
-    #double
+    
 
 
