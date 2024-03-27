@@ -9,7 +9,7 @@ h1= title
 .container-fluid
     .row
       each f,index in results 
-        .col-sm-2(onclick=buy(${index}))
+        .col-sm-2(onclick=`buy(${index})`)
           | #{f.herb_name}, #{f.scent}, $#{f.medicinal_uses}
           
   script.
