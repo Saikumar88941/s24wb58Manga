@@ -1,23 +1,15 @@
 extends layout
 
 block content
-  h1= title 
+h1= title 
 
-  // Step 1: Unbuffered server-side code to define results array
-  - var herbs = [ { herb_name: 'Lavender', scent: 'Sweet', medicinal_uses: 'Relaxation' }, { herb_name: 'Peppermint', scent: 'Minty', medicinal_uses: 'Digestion' },{ herb_name: 'Chamomile', scent: 'Floral', medicinal_uses: 'Sleep aid' } ]
-
-  // Step 3: Outermost div with class container-fluid
-  div(class="container-fluid")
+-var herbs = [{herb_name: 'Lavender', scent: 'Sweet', medicinal_uses: 'Relaxation'}, {herb_name: 'Peppermint', scent: 'Minty', medicinal_uses: 'Digestion'},{herb_name: 'Chamomile', scent: 'Floral', medicinal_uses: 'Sleep aid'}]
 
 
-    // Step 4: Middle div with class row
-    div(class="row")
-
-      // Step 5: Iterate over results array
-     each item in herbs
-
-        // Step 6: Inner div for each object
-        div(class="col-sm-2") #{h.herb_name}, #{h.scent}, #{h.medicinal_uses}.
+div(class="container-fluid")
+div(class="row")
+     each h in herbs
+         div(class="col-sm-2") #{h.herb_name}, #{h.scent}, #{h.medicinal_uses}
 
 
  
