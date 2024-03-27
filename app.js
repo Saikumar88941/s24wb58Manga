@@ -9,6 +9,9 @@ var usersRouter = require('./routes/users');
 //var herbsRouter = require('./routes/herbs');
 var SculpturesRouter = require('./routes/Sculptures');
 var gridRouter = require('./routes/grid');
+var pickRouter = require('./routes/pick')
+
+
 
 
 
@@ -29,6 +32,7 @@ app.use('/users', usersRouter);
 //app.use('/herbs', herbsRouter);
 app.use('/Sculptures', SculpturesRouter);
 app.use('/grid',gridRouter);
+app.use('/pick', pickRouter)
 
 
 // catch 404 and forward to error handler
