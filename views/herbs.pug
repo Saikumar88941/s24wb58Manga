@@ -6,10 +6,16 @@ h1= title
 -var herbs = [{herb_name: 'Lavender', scent: 'Sweet', medicinal_uses: 'Relaxation'}, {herb_name: 'Peppermint', scent: 'Minty', medicinal_uses: 'Digestion'},{herb_name: 'Chamomile', scent: 'Floral', medicinal_uses: 'Sleep aid'}]
 
 
-div(class="container-fluid")
-div(class="row")
-     each h in herbs
-         div(class="col-sm-2") #{h.herb_name}, #{h.scent}, #{h.medicinal_uses}
+.container-fluid
+    .row
+      each f,index in results 
+        .col-sm-2(onclick=buy(${index}))
+          | #{f.herb_name}, #{f.scent}, $#{f.medicinal_uses}
+          
+  script.
+    function buy(index) {
+      alert(`You purchased Item: ${index+1}`);
+    }
 
 
  
