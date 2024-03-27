@@ -3,14 +3,14 @@ extends layout
 block content
 h1= title 
 
--var herbs = [{herb_name: 'Lavender', scent: 'Sweet', medicinal_uses: 'Relaxation'}, {herb_name: 'Peppermint', scent: 'Minty', medicinal_uses: 'Digestion'},{herb_name: 'Chamomile', scent: 'Floral', medicinal_uses: 'Sleep aid'}]
+- var herbs = [{herb_name: "Lavender", scent: "Sweet", medicinal_uses: "Relaxation"}, {herb_name: "Peppermint", scent: "Minty", medicinal_uses: "Digestion"},{herb_name: "Chamomile", scent: "Floral", medicinal_uses: "Sleep aid"}]
 
 
 .container-fluid
     .row
-      each f,index in results 
+      each h,index in results 
         .col-sm-2(onclick=`buy(${index})`)
-          | #{f.herb_name}, #{f.scent}, $#{f.medicinal_uses}
+          | #{h.herb_name}, #{h.scent}, $#{h.medicinal_uses}
           
   script.
     function buy(index) {
